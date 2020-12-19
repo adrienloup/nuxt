@@ -1,0 +1,24 @@
+{
+  "name": "nuxt",
+  "version": "1.0.0",
+  "description": "Nuxt starter",
+  "author": "adri",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxt/http": "^0.6.1",
+    "nuxt": "latest",
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "latest"
+  },
+  "devDependencies": {
+    "@nuxt/types": "latest",
+    "@nuxt/typescript-build": "latest",
+    "fibers": "^5.0.0",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0"
+  }
+}
