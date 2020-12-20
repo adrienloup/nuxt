@@ -1,8 +1,6 @@
 <template>
   <div v-if="lists">
-    <strong>{{ name }}</strong>
-
-    <br /><br />
+    <h2>{{ name }}</h2><br />
 
     <form @submit.prevent="addTask">
       <label>

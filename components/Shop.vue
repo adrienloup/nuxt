@@ -5,9 +5,7 @@
     </div>
 
     <div v-else>
-      <strong>{{ name }}</strong>
-
-      <br /><br />
+      <h2>{{ name }}</h2><br />
 
       <ShopCart
         :cart="cart"
