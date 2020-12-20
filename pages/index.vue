@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <Logo :width="132" :height="100" />
+    <Logo :width="150" />
 
     <h1>{{ title }}</h1>
 

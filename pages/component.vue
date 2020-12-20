@@ -10,7 +10,7 @@
 
     <h2>Slider</h2>
 
-    <Slider :slides="[{ title: 'slide1' }, { title: 'slide2' }, { title: 'slide3' }]" />
+    <Slider :slides="[{ title: 'Slide 1' }, { title: 'Slide 2' }, { title: 'Slide 3' }]" />
 
     <br />
 

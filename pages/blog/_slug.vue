@@ -44,7 +44,7 @@ export default class BlogPost extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 h1 {
   margin-bottom: 1rem;
 }

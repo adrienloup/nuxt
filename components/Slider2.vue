@@ -5,8 +5,8 @@
       :key="key"
       :class="{ 'active': key === index }"
     >
-      {{ slide.title }}
-      <Logo :width="132" :height="100" />
+      <Logo :width="120" />
+      <p>{{ slide.title }}</p>
     </Slide>
 
     <Button @click.prevent="prev">Prev</Button>
