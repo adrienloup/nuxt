@@ -1,6 +1,6 @@
 <template>
   <div>
-    <strong>Cart {{ total }}</strong><br />
+    <h3>Cart {{ total }}</h3>
     <Button @click="emptyCart(cart)">Clear</Button>
   </div>
 </template>

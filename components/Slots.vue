@@ -1,14 +1,10 @@
 <template>
   <div class="slots">
-    <strong>
+    <h3>
       <slot>Slots</slot>
-    </strong>
-    <div>
-      <slot name="slotA">Slot A</slot>
-    </div>
-    <div>
-      <slot name="slotB">Slot B</slot>
-    </div>
+    </h3>
+    <slot name="slotA">Slot A</slot>
+    <slot name="slotB">Slot B</slot>
   </div>
 </template>
 
@@ -25,8 +21,7 @@ export default class Slots extends Vue {
 .slots {
   display: inline-block;
   vertical-align: top;
-  margin-right: 1rem;
-
+  margin-right: 2rem;
   strong {
     display: block;
   }

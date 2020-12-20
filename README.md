@@ -1,2 +1,2 @@
 # nuxt
-sample
+Sample

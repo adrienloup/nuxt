@@ -7,6 +7,10 @@
 
     <br />
 
+    <Authentication />
+
+    <br />
+
     <TodoList />
 
     <br />
@@ -47,8 +51,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+// import { Component, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
+import Component from 'vue-class-component'
 import Logo from '@/components/Logo.vue'
+import Authentication from '@/components/Authentication.vue'
+import Login from '@/components/Login.vue'
 import TodoList from '@/components/TodoList.vue'
 import Shop from '@/components/Shop.vue'
 import Slots from '@/components/Slots.vue'
@@ -61,6 +69,8 @@ import Counter2 from '@/components/Counter2.vue'
 
 @Component({
   components: {
+    Login,
+    Authentication,
     Logo,
     TodoList,
     Shop,
@@ -74,12 +84,6 @@ import Counter2 from '@/components/Counter2.vue'
   }
 })
 export default class PageIndex extends Vue {
-
-  title: string = 'This Home page'
-  search: string = ''
-
-  // mounted() {
-  //   this.slides;
-  // }
+  title: string = 'This Home Page'
 }
 </script>

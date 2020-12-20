@@ -11,7 +11,7 @@
         :cart="cart"
         :total="total"
         @empty-cart="emptyCart"
-      />
+      /><br />
 
       <ShopItem
         v-for="item in items"
