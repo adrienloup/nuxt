@@ -1,7 +1,7 @@
 {
   "name": "nuxt",
   "version": "1.0.0",
-  "description": "Nuxt starter",
+  "description": "Nuxt sample",
   "author": "adri",
   "scripts": {
     "dev": "nuxt",

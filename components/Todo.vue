@@ -74,14 +74,14 @@ export default class Todo extends Vue {
     position: relative;
     overflow: hidden;
     background: #fff;
-    border-radius: .2rem;
-    border: 2px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    border: 3px solid rgba(0, 0, 0, .2);
 
     &::before {
       display: none;
       content: "";
-      width: 1rem;
-      height: 1rem;
+      width: .9rem;
+      height: .9rem;
       margin: auto;
       background: rgba(0, 0, 0, .2);
       border-radius: .1rem;

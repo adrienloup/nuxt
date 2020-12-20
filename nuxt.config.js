@@ -1,4 +1,4 @@
-import pkg from './package.json';
+import bodyParser from 'body-parser'
 
 export default {
 
@@ -12,13 +12,15 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Nuxt',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: 'Nuxt sample' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
 
   generate: {
@@ -43,7 +45,7 @@ export default {
   ** Customize the progress-bar color
   */
   // loading: { color: '#3b8070' },
-  loading: '~/components/Loader2.vue',
+  loading: '~/components/LoadingBar.vue',
 
   /*
   ** Global CSS
@@ -58,7 +60,8 @@ export default {
   /*
   ** Modules - https://nuxtjs.org/docs/2.x/directory-structure/modules
   */
-  modules: ['@nuxt/http'],
+  // TODO http ??
+  modules: ['@nuxt/http', '@nuxtjs/axios', '@nuxtjs/auth'],
 
   buildModules: ['@nuxt/typescript-build'],
 
@@ -67,6 +70,33 @@ export default {
   */
   router: {
     middleware: ['class']
+  },
+
+  /*
+   ** Add server middleware
+   */
+  serverMiddleware: [bodyParser.json(),  '~/api'],
+
+  axios: {
+    proxy: true
+  },
+
+  auth: {
+    plugins: [
+      {
+        src: '~plugins/auth.js',
+        ssr: false
+      }
+    ],
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/login', method: 'post', propertyName: 'token' },
+          logout: false,
+          user: false
+        }
+      }
+    }
   }
 
 }

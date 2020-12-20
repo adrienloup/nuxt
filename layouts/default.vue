@@ -16,7 +16,7 @@ export default class PageIndex extends Vue {
   private mounted() {
     this.$nextTick(() => {
       this.$nuxt.$loading.start()
-      setTimeout(() => this.$nuxt.$loading.finish(), 1e3)
+      setTimeout(() => this.$nuxt.$loading.finish(), 3e3)
     })
   }
 

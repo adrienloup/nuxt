@@ -14,13 +14,11 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
 @Component
 export default class LogoComponent extends Vue {
-
-  @Prop(Number) width!: number;
-  @Prop(Number) height!: number;
-
+  @Prop(Number) width!: number
+  @Prop(Number) height!: number
 }
 </script>

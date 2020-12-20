@@ -1,58 +1,48 @@
 <template>
-<!--  <a v-if="href" :href="href" class="button">-->
-<!--    <slot/>-->
-<!--  </a>-->
-<!--  <button v-else class="button">-->
-<!--    <slot/>-->
-<!--  </button>-->
   <component
-    :is="type"
+    class="button"
+    :is="is"
     :href="href"
+    :to="to"
+    :nuxt="nuxt"
     v-on="$listeners"
-    class="button">
+  >
     <slot />
   </component>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator'
 
 @Component
-export default class ButtonComponent extends Vue {
-
-  // @Prop(String) href!: string;
-  // @Prop(String) to!: string;
+export default class Button extends Vue {
+  @Prop({
+    type: String,
+    default: null,
+  }) public href!: string
 
   @Prop({
     type: String,
     default: null,
-  }) public href!: string;
+  }) public to!: string
 
   @Prop({
-    type: String,
+    type: Boolean,
     default: null,
-  }) public to!: string;
+  }) public nuxt!: boolean
 
-  private get type(): any {
+  private get is(): any {
+    if (this.to && this.nuxt) {
+      return 'nuxt-link';
+    }
+    if (this.to) {
+      return 'router-link'
+    }
     if (this.href) {
       return 'a'
-    } else {
-      this.$emit('tutu');
-      return 'button'
     }
-    // if (this.to && this.nuxt) {
-    //   return 'nuxt-link';
-    // }
-    // if (this.to) {
-    //   return 'router-link';
-    // }
-    // if (this.href) {
-    //   return 'a';
-    // }
-    // this.$emit('tutu');
-    // return 'button';
+    return 'button'
   }
-
 }
 </script>
 
@@ -72,7 +62,6 @@ export default class ButtonComponent extends Vue {
   color: #fff;
   cursor: pointer;
   outline: none;
-
   &:hover {
      background-color: #009D71;
   }
