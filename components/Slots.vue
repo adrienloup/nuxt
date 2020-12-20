@@ -13,8 +13,8 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import Vue from 'vue'
+import Component from 'vue-class-component'
 
 @Component
 export default class Slots extends Vue {
@@ -25,23 +25,10 @@ export default class Slots extends Vue {
 .slots {
   display: inline-block;
   vertical-align: top;
-  margin-right: .5rem;
-  padding: .8rem .5rem .8rem 1rem;
-  border-radius: .4rem;
-  border: 2px solid #00C48D;
+  margin-right: 1rem;
 
   strong {
     display: block;
-  }
-
-  div {
-    display: inline-block;
-    vertical-align: top;
-    margin: .5rem .5rem 0 0;
-  }
-
-  & + .slots {
-    margin-left: 1rem;
   }
 }
 </style>
