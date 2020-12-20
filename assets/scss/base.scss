@@ -31,6 +31,10 @@ h2 {
   font-size: 1.6rem;
 }
 
+h3 {
+  font-size: 1.2rem;
+}
+
 strong {
   font-size: 1.4rem;
 }
@@ -45,14 +49,14 @@ img {
   display: block;
 }
 
-.input {
+input[type="text"] {
   display: inline-block;
   vertical-align: middle;
   color: $color;
   background-color: #fff;
   -webkit-appearance: none;
   padding: .6rem;
-  border-radius: .4rem;
+  border-radius: .1rem;
   border: 2px solid rgba(0, 0, 0, .2);
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
   "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

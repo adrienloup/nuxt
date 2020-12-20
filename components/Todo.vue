@@ -1,13 +1,13 @@
 <template>
   <div v-if="todo" class="todo">
-    <strong
+    <h3
       contenteditable="true"
       :class="{ done: todo.done }"
       @keydown.enter="updateTodo($event, todo)"
       @blur="updateTodo($event, todo)"
     >
       {{ todo.title }}
-    </strong>
+    </h3>
 
     <label>
       <input
@@ -68,24 +68,32 @@ export default class Todo extends Vue {
   }
 
   label {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
     position: relative;
     overflow: hidden;
     background: #fff;
-    border-radius: 50%;
+    border-radius: .2rem;
     border: 2px solid rgba(0, 0, 0, .2);
-    width: 1.5rem;
-    height: 1.5rem;
+
+    &::before {
+      display: none;
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      margin: auto;
+      background: rgba(0, 0, 0, .2);
+      border-radius: .1rem;
+    }
   }
 
   .done {
     text-decoration:line-through;
   }
 
-  .done + label {
-    background: #00C48D;
-    border-color: #00C48D;
+  .done + label::before {
+    display: block;
   }
 }
 </style>

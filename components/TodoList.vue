@@ -7,7 +7,6 @@
         <input
           v-model="search"
           type="text"
-          class="input"
         />
       </label>
       <Button type="submit">Add</Button>
@@ -67,10 +66,9 @@ export default class TodoList extends Vue {
 
 <style lang="scss" scoped>
 form {
-  display: flex;
-  align-items: center;
-}
-button {
-  margin-left: .25rem;
+  label {
+    display: block;
+    margin-bottom: .25rem;
+  }
 }
 </style>
