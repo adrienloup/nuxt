@@ -5,6 +5,10 @@
     </div>
 
     <div v-else>
+      <strong>{{ name }}</strong>
+
+      <br /><br />
+
       <ShopCart
         :cart="cart"
         :total="total"
@@ -13,8 +17,8 @@
 
       <ShopItem
         v-for="item in items"
-        :item="item"
         :key="item.id"
+        :item="item"
         @update-cart="updateCart"
       />
     </div>
@@ -40,6 +44,7 @@ export default {
         { id: 2, name: 'Orange', price: 2 },
         { id: 3, name: 'Apple', price: 1 }
       ],
+      name: 'ShoppingCart',
       cart: [],
       total: 0
     }
@@ -56,13 +61,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.shop {
-  margin: 1rem 0;
-
-  &-item {
-    margin-top: 1rem;
-  }
-}
-</style>

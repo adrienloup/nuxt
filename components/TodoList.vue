@@ -1,52 +1,78 @@
 <template>
-  <div class="todolist">
+  <div v-if="lists">
     <strong>{{ name }}</strong>
 
     <br /><br />
 
     <form @submit.prevent="addTask">
       <label>
-        <input v-model="todo" type="text" />
+        <input
+          v-model="search"
+          type="text"
+          class="input"
+        />
       </label>
-
-      <br /><br />
-      {{ todo }}
-
       <Button type="submit">Add</Button>
     </form>
 
-    <Todo />
+    <div v-if="lists.length">
+      <Todo
+        v-for="todo in lists"
+        :key="todo.id"
+        :todo="todo"
+        @remove-todo="removeTodo"
+      />
+    </div>
+  </div>
+
+  <div v-else>
+    <Loader />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
+import Loader from '@/components/Loader.vue'
 import Button from '@/components/Button.vue'
 import Todo from '@/components/Todo.vue'
 
 @Component({
   components: {
+    Loader,
     Button,
-    Todo
+    Todo,
   }
 })
-export default class ComponentTodoList extends Vue {
-
+export default class TodoList extends Vue {
   name: string = 'TodoList'
-  todo: string = ''
+  search: string = ''
   lists: any[] = []
 
   addTask() {
-    console.log('addTask')
+    if (!this.search) {
+      return
+    }
+    this.lists.push({
+      id: this.lists.length + 1,
+      title: this.search,
+      done: false
+    })
+    this.search = ''
   }
 
+  removeTodo(e: any) {
+    return this.lists.splice(this.lists.findIndex(todo => todo.id === e.id), 1)
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.todolist {
-  margin: 1rem 0
+form {
+  display: flex;
+  align-items: center;
+}
+button {
+  margin-left: .25rem;
 }
 </style>
-

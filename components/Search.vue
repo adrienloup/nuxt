@@ -1,7 +1,11 @@
 <template>
   <div>
     <label>
-      <input type="text" v-model="search" />
+      <input
+        v-model="search"
+        type="text"
+        class="input"
+      />
     </label>
     {{ listed.length }}
 
