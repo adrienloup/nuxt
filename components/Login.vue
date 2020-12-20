@@ -15,7 +15,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import Button from '@/components/Button.vue'
+import Button from '~/components/Button3.vue'
 
 @Component({
   components: {

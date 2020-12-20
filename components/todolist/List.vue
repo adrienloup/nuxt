@@ -1,13 +1,8 @@
 <template>
   <div v-if="lists">
-    <h2>{{ name }}</h2><br />
-
     <form @submit.prevent="addTask">
       <label>
-        <input
-          v-model="search"
-          type="text"
-        />
+        <input v-model="search" type="text" />
       </label>
       <Button type="submit">Add</Button>
     </form>
@@ -23,26 +18,25 @@
   </div>
 
   <div v-else>
-    <Loader />
+    <LoadingStatic />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import Loader from '@/components/Loader.vue'
-import Button from '@/components/Button.vue'
-import Todo from '@/components/Todo.vue'
+import LoadingStatic from '@/components/base/LoadingStatic.vue'
+import Button from '@/components/base/Button.vue'
+import Todo from '@/components/todolist/Todo.vue'
 
 @Component({
   components: {
-    Loader,
+    LoadingStatic,
     Button,
     Todo,
   }
 })
 export default class TodoList extends Vue {
-  name: string = 'TodoList'
   search: string = ''
   lists: any[] = []
 
@@ -65,10 +59,8 @@ export default class TodoList extends Vue {
 </script>
 
 <style lang="scss" scoped>
-form {
-  label {
-    display: block;
-    margin-bottom: .25rem;
-  }
+label {
+  vertical-align: middle;
+  display: inline-block;
 }
 </style>

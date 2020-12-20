@@ -9,14 +9,19 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
+import Header from '@/components/base/Header.vue'
 
-@Component
-export default class PageIndex extends Vue {
+@Component({
+  components: {
+    Header
+  }
+})
+export default class Default extends Vue {
 
   private mounted() {
     this.$nextTick(() => {
       this.$nuxt.$loading.start()
-      setTimeout(() => this.$nuxt.$loading.finish(), 3e3)
+      setTimeout(() => this.$nuxt.$loading.finish(), 1e3)
     })
   }
 

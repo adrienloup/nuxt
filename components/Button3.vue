@@ -1,12 +1,5 @@
 <template>
-  <component
-    class="button"
-    :is="is"
-    :href="href"
-    :to="to"
-    :nuxt="nuxt"
-    v-on="$listeners"
-  >
+  <component class="button" :is="is" :href="href" :to="to" :nuxt="nuxt" v-on="$listeners">
     <slot />
   </component>
 </template>
@@ -15,7 +8,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
 
 @Component
-export default class Button extends Vue {
+export default class BaseButton extends Vue {
   @Prop({
     type: String,
     default: null,
@@ -46,7 +39,7 @@ export default class Button extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .button {
   min-width: 70px;
   display: inline-block;

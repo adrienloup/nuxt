@@ -1,5 +1,5 @@
 <template>
-  <div class="slots">
+  <div>
     <h3>
       <slot>Slots</slot>
     </h3>
@@ -18,12 +18,9 @@ export default class Slots extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.slots {
+div {
   display: inline-block;
   vertical-align: top;
-  margin-right: 2rem;
-  strong {
-    display: block;
-  }
+  margin: 0 2rem 2rem 0;
 }
 </style>

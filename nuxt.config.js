@@ -39,13 +39,12 @@ export default {
   /*
   ** Activate components - https://nuxtjs.org/docs/2.x/directory-structure/components#components-module
   */
-  components: true,
+  components: false,
 
   /*
   ** Customize the progress-bar color
   */
-  // loading: { color: '#3b8070' },
-  loading: '~/components/LoadingBar.vue',
+  loading: '~/components/base/Loading.vue',
 
   /*
   ** Global CSS

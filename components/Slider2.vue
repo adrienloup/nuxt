@@ -1,18 +1,17 @@
 <template>
   <div v-if="slides">
-    <strong>{{ name }}</strong>
-
-    <br /><br />
-
     <Slide
       v-for="(slide, key) in slides"
       :key="key"
       :class="{ 'active': key === index }"
     >
-      {{ slide.title }}
+      <Logo :width="120" />
+      <p>{{ slide.title }}</p>
     </Slide>
+
     <Button @click.prevent="prev">Prev</Button>
     <Button @click.prevent="next">Next</Button>
+
     <ul>
       <li
         v-for="nSlide in total"
@@ -34,13 +33,15 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import Loader from '@/components/Loader.vue'
 import Slide from '@/components/Slide.vue'
-import Button from '@/components/Button.vue'
+import Button from '@/components/base/Button.vue'
+import Logo from '@/components/Logo.vue'
 
 @Component({
   components: {
     Loader,
     Slide,
-    Button
+    Button,
+    Logo
   }
 })
 export default class Slider2 extends Vue {

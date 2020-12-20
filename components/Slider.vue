@@ -16,7 +16,7 @@
 
 <script>
 import Slide from '@/components/Slide';
-import Button from '@/components/Button';
+import Button from '~/components/Button3';
 
 export default {
   name: 'Slider',

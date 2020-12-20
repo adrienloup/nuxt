@@ -2,7 +2,7 @@
   "name": "nuxt",
   "version": "1.0.0",
   "description": "Nuxt sample",
-  "author": "adri",
+  "author": "",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

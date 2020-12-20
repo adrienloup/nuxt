@@ -1,13 +1,13 @@
 <template>
-  <div v-if="todo" class="todo">
-    <h3
+  <div v-if="todo">
+    <span
       contenteditable="true"
       :class="{ done: todo.done }"
       @keydown.enter="updateTodo($event, todo)"
       @blur="updateTodo($event, todo)"
     >
       {{ todo.title }}
-    </h3>
+    </span>
 
     <label>
       <input
@@ -15,11 +15,8 @@
         @change="completeTodo(todo)"
         @checked="todo.done"
       />
-    </label><br />
-    <Button
-      class="remove"
-      @click.prevent="removeTodo(todo)"
-    >
+    </label>
+    <Button @click.prevent="removeTodo(todo)">
       Remove
     </Button>
   </div>
@@ -27,7 +24,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import Button from '@/components/Button.vue'
+import Button from '@/components/base/Button.vue'
 
 @Component({
   components: {
@@ -54,45 +51,32 @@ export default class Todo extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.todo {
-  padding-top: 1rem;
-
-  strong {
-    display: inline-block;
-    vertical-align: middle;
+input[type="checkbox"] {
+  position: absolute;
+  top: -100%;
+}
+label {
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-radius: .3rem;
+  border: 3px solid rgba(0, 0, 0, .2);
+  &::before {
+    display: none;
+    content: "";
+    width: .9rem;
+    height: .9rem;
+    margin: auto;
+    background: rgba(0, 0, 0, .2);
+    border-radius: .1rem;
   }
-
-  input[type="checkbox"] {
-    position: absolute;
-    top: -100%;
-  }
-
-  label {
-    display: flex;
-    width: 1.5rem;
-    height: 1.5rem;
-    position: relative;
-    overflow: hidden;
-    background: #fff;
-    border-radius: .3rem;
-    border: 3px solid rgba(0, 0, 0, .2);
-
-    &::before {
-      display: none;
-      content: "";
-      width: .9rem;
-      height: .9rem;
-      margin: auto;
-      background: rgba(0, 0, 0, .2);
-      border-radius: .1rem;
-    }
-  }
-
-  .done {
-    text-decoration:line-through;
-  }
-
-  .done + label::before {
+}
+.done {
+  text-decoration:line-through;
+  & + label::before {
     display: block;
   }
 }

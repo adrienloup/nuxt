@@ -1,58 +1,38 @@
 <template>
   <div>
     <label>
-      <input
-        v-model="search"
-        type="text"
-        class="input"
-      />
+      <input v-model="search" type="text" class="input" />
+      {{ listed.length }}
     </label>
-    {{ listed.length }}
 
     <div v-for="item in listed">
-      <NuxtLink :to="{ name: 'posts-slug', params: { slug: item.id } }">
+      <div v-if="slugPart">
+        <NuxtLink :to="{ name: slugPart, params: { slug: item.id } }">
+          {{ item.title }}
+        </NuxtLink>
+      </div>
+      <div v-else>
         {{ item.title }}
-      </NuxtLink>
+      </div>
     </div>
 
-    <div v-if="listed.length === 0">not found</div>
+    <div v-if="listed.length === 0">Not found</div>
   </div>
 </template>
 
 <script lang="ts">
-// export default {
-//   name: "Search",
-//   data: () => ({
-//     search: ''
-//   }),
-//   props: {
-//     list: {
-//       type: Array,
-//       default: () => []
-//     }
-//   },
-//   computed: {
-//     listed: function() {
-//       return this.list.filter(item => {
-//         return item.title.toLowerCase().includes(this.search);
-//       });
-//     }
-//   }
-// };
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator'
 
 @Component
-export default class SearchComponent extends Vue {
-
-  @Prop() list!: any[];
-
-  private search: string = '';
+export default class Search extends Vue {
+  @Prop() list!: any[]
+  @Prop() slugPart!: string
+  search: string = ''
 
   public get listed() {
     return this.list.filter(item => {
-      return item.title.toLowerCase().includes(this.search);
-    });
+      return item.title.toLowerCase().includes(this.search)
+    })
   }
-
 }
 </script>
