@@ -10,7 +10,7 @@
 // import Vue from 'vue';
 // import Component from 'vue-class-component'
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import Button from '@/components/Button.vue'
+import Button from '~/components/Button3.vue'
 
 @Component({
   components: {

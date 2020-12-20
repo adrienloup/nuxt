@@ -1,12 +1,12 @@
 <template>
   <div>
     <div v-if="$auth.loggedIn">
-      <div>Logged In</div>
+      <h2>Logged In</h2>
       <Button @click="$auth.logout()">Logout</Button>
     </div>
 
     <div v-else>
-      <div>Logged Out</div>
+      <h2>Logged Out</h2>
       <Button to="/login">Login</Button>
     </div>
   </div>
@@ -15,7 +15,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import Button from '@/components/Button.vue'
+import Button from '@/components/base/Button.vue'
 
 @Component({
   components: {

@@ -24,7 +24,7 @@
 
 <script>
 import Loader from '@/components/Loader'
-import Button from '@/components/Button'
+import Button from '~/components/Button3'
 
 export default {
   components: {

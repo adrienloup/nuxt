@@ -13,7 +13,7 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import Loader from '@/components/Loader.vue'
-import Button from '@/components/Button.vue'
+import Button from '~/components/Button3.vue'
 import Search from '@/components/Search.vue'
 
 @Component({

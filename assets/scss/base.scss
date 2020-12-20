@@ -1,15 +1,14 @@
+@import './assets/scss/var.scss';
+
 html {
-  //font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-  //Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+  font-family: $font-family;
+  font-size: 18px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  color: $color;
+  color: $color-primary;
 }
 
 *,
@@ -25,6 +24,7 @@ body {
 
 h1 {
   font-size: 2rem;
+  line-height: 2rem;
 }
 
 h2 {
@@ -35,12 +35,12 @@ h3 {
   font-size: 1.2rem;
 }
 
-strong {
-  font-size: 1.4rem;
+a {
+  color: $color-primary;
 }
 
-a {
-  color: $color;
+ul {
+  padding: 1rem;
 }
 
 img {
@@ -52,16 +52,15 @@ img {
 input[type="text"] {
   display: inline-block;
   vertical-align: middle;
-  color: $color;
+  color: $color-primary;
   background-color: #fff;
   -webkit-appearance: none;
   padding: .6rem;
   border-radius: .3rem;
   border: 3px solid rgba(0, 0, 0, .2);
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.2;
+  font-family: $font-family;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .nuxt {
@@ -76,25 +75,6 @@ input[type="text"] {
     a {
       display: inline-block;
       vertical-align: top;
-      padding: 1rem 1.6rem;
-      background-color: #00C48D;
-      border-radius: 2rem;
-      border: none;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      color: #fff;
-      cursor: pointer;
-      outline: none;
-
-      &:hover {
-        background-color: #009D71;
-      }
     }
-  }
-
-  &-footer {
-    display: flex;
-    padding: 2rem;
   }
 }

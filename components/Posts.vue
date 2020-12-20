@@ -22,7 +22,7 @@
 
 <script>
 import Loader from '@/components/Loader';
-import Button from '@/components/Button';
+import Button from '~/components/Button3';
 import Search from '@/components/Search';
 
 export default {
@@ -52,10 +52,10 @@ export default {
       console.log(e);
     }
   }
-};
+}
 // import { Vue, Component, Prop } from 'vue-property-decorator';
 // import Loader from '@/components/Loader.vue';
-// import Button from '~/components/Button.vue';
+// import Button from '~/components/Button3.vue';
 // import Search from '~/components/Search.vue';
 //
 // @Component({
